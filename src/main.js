@@ -161,3 +161,42 @@ const inventory = [
     sold: 8,
   },
 ];
+
+//1a
+const types = inventory.map((hetType) => {
+  return hetType.type;
+});
+
+console.log(types);
+
+//1b
+
+const soldOuts = inventory.filter((uitverkocht) => {
+  return uitverkocht.originalStock === uitverkocht.sold;
+})
+
+console.log(soldOuts);
+
+//1c
+
+const ambiLights = inventory.filter((ambitv) => {
+  return ambitv.options.ambiLight === true;
+})
+
+console.log(ambiLights);
+
+//1d
+
+
+
+inventory.sort((a, b) => {
+  if (a.price - b.price > 0) {
+    return 1;
+  }
+  if (a.price - b.price < 0) {
+    return -1;
+  }
+   return 0;
+})
+
+console.log(inventory);
